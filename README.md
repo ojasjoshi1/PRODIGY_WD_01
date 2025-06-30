@@ -41,4 +41,7 @@ A sleek and interactive wallpaper showcase website with a smooth scroll experien
 ---
 
 ## 📁 Project Structure
+wallpaper-app/
+├── README.md
+├── task1.html
 
