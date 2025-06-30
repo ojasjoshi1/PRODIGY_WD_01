@@ -13,10 +13,6 @@ A sleek and interactive wallpaper showcase website with a smooth scroll experien
 - 📱 Fully responsive design for mobile and desktop
 - 🔍 Scroll-triggered animations using Intersection Observer API
 
-## 🖼️ Live Demo
-
-👉 [Check the live demo](#) — *(Replace this with GitHub Pages or Netlify link if deployed)*
-
 ---
 
 ## 📸 Wallpapers Included
