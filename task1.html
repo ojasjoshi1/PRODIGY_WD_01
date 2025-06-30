@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wallpaper App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .menu li a:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+
+    .wallpaper-section {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 20px;
+    }
+
+    .artist-info {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 90%;
+      width: 600px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .visible .artist-info {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .artist-info h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .artist-info ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .artist-info ul li {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    #gallery {
+      padding: 100px 30px 50px;
+      background-color: #f5f5f5;
+    }
+
+    #gallery h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .thumb {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+      display: block;
+    }
+
+    .thumb:hover {
+      transform: scale(1.05);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 6px;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+
+    .download-btn:hover {
+      background-color: #555;
+    }
+
+    #contact {
+      background-color: #222;
+      color: white;
+      padding: 80px 30px;
+      text-align: center;
+    }
+
+    #contact h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    #contact p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    section {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">Wallpaper App</div>
+    <ul class="menu">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Wallpaper Sections -->
+  <section id="top" class="wallpaper-section" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1950&q=80');">
+    <div class="artist-info">
+      <h2>Forest Light</h2>
+      <ul>
+        <li>By Alex Green</li>
+        <li>Co-shot by Mia Tan</li>
+        <li>Editing: Samuel Roy</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="wall2" class="wallpaper-section" style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1950&q=80');">
+    <div class="artist-info">
+      <h2>Mountain Majesty</h2>
+      <ul>
+        <li>By Sarah Lee</li>
+        <li>Styled by Lucas Zhang</li>
+        <li>Drone: Kevin Nair</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="wall3" class="wallpaper-section" style="background-image: url('https://images.wallpapersden.com/image/download/escape-hd-minimal-cool_bWZnbGqUmZqaraWkpJRmbmdlrWZlbWU.jpg');">
+    <div class="artist-info">
+      <h2>Deep Space</h2>
+      <ul>
+        <li>By John Doe</li>
+        <li>Color Grading: Nina Patel</li>
+        <li>Astro Processing: Vikram Rao</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="wall4" class="wallpaper-section" style="background-image: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1950&q=80');">
+    <div class="artist-info">
+      <h2>Urban Sunrise</h2>
+      <ul>
+        <li>By Lisa White</li>
+        <li>Drone Operator: Max Rees</li>
+        <li>Light: Priya Mehta</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <!-- Image 1 -->
+      <div>
+        <a class="thumb" href="#top">
+          <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Forest Light">
+        </a>
+        <a class="download-btn" href="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80" download="forest-light.jpg">Download</a>
+      </div>
+
+      <!-- Image 2 -->
+      <div>
+        <a class="thumb" href="#wall2">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80" alt="Mountain Majesty">
+        </a>
+        <a class="download-btn" href="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1920&q=80" download="mountain-majesty.jpg">Download</a>
+      </div>
+
+      <!-- Image 3 -->
+      <div>
+        <a class="thumb" href="#wall3">
+          <img src="https://images.wallpapersden.com/image/download/escape-hd-minimal-cool_bWZnbGqUmZqaraWkpJRmbmdlrWZlbWU.jpg" alt="Deep Space">
+        </a>
+        <a class="download-btn" href="https://images.wallpapersden.com/image/download/escape-hd-minimal-cool_bWZnbGqUmZqaraWkpJRmbmdlrWZlbWU.jpg" download="deep-space.jpg">Download</a>
+      </div>
+
+      <!-- Image 4 -->
+      <div>
+        <a class="thumb" href="#wall4">
+          <img src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=600&q=80" alt="Urban Sunrise">
+        </a>
+        <a class="download-btn" href="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1920&q=80" download="urban-sunrise.jpg">Download</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Name:</strong> Rahul Sharma</p>
+    <p><strong>Email:</strong> rahul.wallpaperapp@example.com</p>
+    <p><strong>Phone:</strong> +91-9876543210</p>
+    <p><strong>Address:</strong> 101 MG Road, Bengaluru, Karnataka, India - 560001</p>
+  </section>
+
+  <!-- Scroll Observer -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    document.querySelectorAll('.wallpaper-section').forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
